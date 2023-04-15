@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title></title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <!-- End Plugin css for this page -->
+  <!-- inject:css -->
+  <!-- endinject -->
+  <!-- Layout styles -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- End layout styles -->
+  <link rel="shortcut icon" href="../../assets/images/favicon.ico" />
+
+</head>
+
+<body>
+
+  <div class="container-scroller">
+    <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo" href="../../index.html">
+          LegendBytes</a>
+        <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/logo-mini.svg"
+            alt="logo" /></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-stretch">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="mdi mdi-menu"></span>
+        </button>
+        
+        <ul class="navbar-nav navbar-nav-right">
+          
+          <li class="nav-item d-none d-lg-block full-screen-link">
+            <a class="nav-link">
+              <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
+              data-bs-toggle="dropdown">
+              <i class="mdi mdi-bell-outline"></i>
+              <span class="count-symbol bg-danger"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+              aria-labelledby="notificationDropdown">
+              <h6 class="p-3 mb-0">Notifications</h6>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-success">
+                    <i class="mdi mdi-calendar"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                  <h6 class="preview-subject font-weight-normal mb-1">Event today</h6>
+                  <p class="text-gray ellipsis mb-0"> Just a reminder that you have an event today </p>
+                </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-warning">
+                    <i class="mdi mdi-settings"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                  <h6 class="preview-subject font-weight-normal mb-1">Settings</h6>
+                  <p class="text-gray ellipsis mb-0"> Update dashboard </p>
+                </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-info">
+                    <i class="mdi mdi-link-variant"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                  <h6 class="preview-subject font-weight-normal mb-1">Launch Admin</h6>
+                  <p class="text-gray ellipsis mb-0"> New admin wow! </p>
+                </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <h6 class="p-3 mb-0 text-center">See all notifications</h6>
+            </div>
+          </li>
+
+          
+          <li class="nav-item nav-logout d-none d-lg-block">
+            <a class="nav-link" href="#">
+              <i class="mdi mdi-power"></i>
+            </a>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+          data-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          
+          <li class="nav-item">
+
+
+            <form action="/chtohoml" class="nav-link" method="post">
+              <button> <span class="menu-title">Dashboard</span>
+
+                <i class="mdi mdi-home menu-icon"></i>
+
+              </button>
+              <br /><br />
+              <input type="text" name="chreg" placeholder="2nd numm" id="ttid3c"
+                style="width: 0; opacity: 0;visibility: hidden;">
+              <br /><br />
+
+              <script>
+
+                document.getElementById("ttid3c").value = '<%usl.forEach( users=>{%><%=users.reg_name%><%})%>';
+                console.log("chart inputbox = " + document.getElementById("ttid3c").value);
+                console.log("chart direct = " + '<%usl.forEach( users=>{%><%=users.reg_name%><%})%>');
+
+              </script>
+
+            </form>
+
+          </li>
+
+         
+          <li class="nav-item">
+            <a class="nav-link" href="http://192.168.200.250:8502">
+              <span class="menu-title">Flood Visualization</span>
+              <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="https://prathampawale-st-eqmap-map-eartquack-z621tn.streamlitapp.com/">
+              <span class="menu-title">Earthquake 3D</span>
+              <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="http://192.168.200.250:8503">
+              <span class="menu-title">Flood Prediction</span>
+              <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+            </a>
+          </li>
+          
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="page-header">
+            <h3 class="page-title"> Chart-js </h3>
+
+
+            <input type="text" name="chartsk" placeholder="2nd numm" id="bar-chart_id"
+              style="opacity: 0;visibility: hidden;"> <br /><br />
+
+
+
+            <script>
+              //charts integration 
+
+
+              var linkk = '<% usl.forEach( users=>{ %> <%= users.githublink %>  <% }) %>';
+              //  "https://raw.githubusercontent.com/Mrprayag077/SIH_proj/main/pp.json";
+
+              document.getElementById("bar-chart_id").value = linkk;
+              console.log("1st iip url = " + document.getElementById("bar-chart_id").value);
+
+            </script>
+
+
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Charts</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Chart-js</li>
+              </ol>
+            </nav>
+          </div>
+
+
+
+          <div class="row">
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Line chart</h4>
+                  <canvas id="lineChart" style="height:200px; width: 300px;"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Bar chart</h4>
+                  <canvas id="barChart" style="height:200px; width: 300px;"></canvas>
+
+
+                  <button id='btnSpeak'>Play</button>
+
+
+                  <script>
+                    document.getElementById('txtInput').value = "this is a bar chart. here we can see on y-axes total distraction and on x-axes total years data in the region. highest bar is of 2012 year with value 2000 points scale and least 2022 of 800 points scale";
+                    var txtInput = document.querySelector('#txtInput');
+                    var voiceList = document.querySelector('#voiceList');
+                    var btnSpeak = document.querySelector('#btnSpeak');
+                    var synth = window.speechSynthesis;
+                    var voices = [];
+
+                    PopulateVoices();
+                    if (speechSynthesis !== undefined) {
+                      speechSynthesis.onvoiceschanged = PopulateVoices;
+                    }
+
+                    btnSpeak.addEventListener('click', () => {
+                      var toSpeak = new SpeechSynthesisUtterance(txtInput.value);
+                      var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
+                      voices.forEach((voice) => {
+                        if (voice.name === selectedVoiceName) {
+                          toSpeak.voice = voice;
+                          console.log(selectedVoiceName);
+                        }
+                      });
+                      synth.speak(toSpeak);
+                    });
+
+                    function PopulateVoices() {
+                      voices = synth.getVoices();
+                      var selectedIndex = voiceList.selectedIndex < 0 ? 0 : voiceList.selectedIndex;
+                      voiceList.innerHTML = '';
+                      voices.forEach((voice) => {
+                        var listItem = document.createElement('option');
+                        listItem.textContent = voice.name;
+                        listItem.setAttribute('data-lang', voice.lang);
+                        listItem.setAttribute('data-name', voice.name);
+                        voiceList.appendChild(listItem);
+                      });
+
+                      voiceList.selectedIndex = selectedIndex;
+                    }
+                  </script>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Area chart</h4>
+                  <canvas id="areaChart" style="height:350px;width: 450px;"></canvas>
+
+
+
+                      <script>
+                        document.getElementById('txtInput').value = "this is a bar chart. here we can see on y-axes total distraction and on x-axes total years data in the region. highest bar is of 2012 year with value 2000 points scale and least 2022 of 800 points scale";
+                        var txtInput = document.querySelector('#txtInput');
+                        var voiceList = document.querySelector('#voiceList');
+                        var btnSpeak = document.querySelector('#btnSpeak');
+                        var synth = window.speechSynthesis;
+                        var voices = [];
+
+                        PopulateVoices();
+                        if (speechSynthesis !== undefined) {
+                          speechSynthesis.onvoiceschanged = PopulateVoices;
+                        }
+
+                        btnSpeak.addEventListener('click', () => {
+                          var toSpeak = new SpeechSynthesisUtterance(txtInput.value);
+                          var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
+                          voices.forEach((voice) => {
+                            if (voice.name === selectedVoiceName) {
+                              toSpeak.voice = voice;
+                              console.log(selectedVoiceName);
+                            }
+                          });
+                          synth.speak(toSpeak);
+                        });
+
+                        function PopulateVoices() {
+                          voices = synth.getVoices();
+                          var selectedIndex = voiceList.selectedIndex < 0 ? 0 : voiceList.selectedIndex;
+                          voiceList.innerHTML = '';
+                          voices.forEach((voice) => {
+                            var listItem = document.createElement('option');
+                            listItem.textContent = voice.name;
+                            listItem.setAttribute('data-lang', voice.lang);
+                            listItem.setAttribute('data-name', voice.name);
+                            voiceList.appendChild(listItem);
+                          });
+
+                          voiceList.selectedIndex = selectedIndex;
+                        }
+                      </script> -->
+
+
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Doughnut chart</h4>
+                  <canvas id="doughnutChart" style="height:350px;width: 450px;"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Pie chart</h4>
+                  <canvas id="pieChart" style="height:350px;width: 450px;"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Scatter chart</h4>
+                  <canvas id="scatterChart" style="height:250px;width: 400px;"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+          <div class="container-fluid d-flex justify-content-between">
+            <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">LegendBytes</span>
+           
+             
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <p style="visibility: hidden;">Select Voice: <select id='voiceList'></select>
+  </p>
+  <input id='txtInput' style="visibility: hidden;" />
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="../../assets/vendors/chart.js/Chart.min.js"></script>
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="../../assets/js/off-canvas.js"></script>
+  <script src="../../assets/js/hoverable-collapse.js"></script>
+  <script src="../../assets/js/misc.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page -->
+  <script src="../../assets/js/chart.js"></script>
+  <!-- End custom js for this page -->
+
+
+</body>
+
+</html>

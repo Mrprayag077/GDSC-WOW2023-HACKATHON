@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Region</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.Default.css" />
+
+  <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+    integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+    crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster.js"></script>
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <!-- endinject -->
+  <!-- Layout styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/sliderpp.css">
+
+  <!-- End layout styles -->
+  <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+
+  <!-- Head -->
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+
+  <!-- d3 JavaScript-->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="../map/static/css/style.css">
+
+
+  <link rel="stylesheet" href="../map/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="../map/dist/MarkerCluster.Default.css">
+
+  <script src="../map/dist/leaflet.markercluster.js"></script>
+
+
+</head>
+
+<body>
+  <div class="container-scroller">
+
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo" href="../../index.html">
+          Webscalers</a>
+        <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/logo-mini.svg"
+            alt="logo" /></a>
+      </div>
+
+      <div class="navbar-menu-wrapper d-flex align-items-stretch">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="mdi mdi-menu"></span>
+        </button>
+        <div class="search-field d-none d-md-block">
+          <form class="d-flex align-items-center h-100" action="#">
+
+          </form>
+        </div>
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item d-none d-lg-block full-screen-link">
+            <a class="nav-link">
+              <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+            </a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
+              data-bs-toggle="dropdown">
+              <i class="mdi mdi-bell-outline"></i>
+              <span class="count-symbol bg-danger"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+              aria-labelledby="notificationDropdown">
+              <h6 class="p-3 mb-0">Notifications</h6>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-success">
+                    <i class="mdi mdi-calendar"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                  <h6 class="preview-subject font-weight-normal mb-1">Event today</h6>
+                  <p class="text-gray ellipsis mb-0"> Just a reminder that you have an event today </p>
+                </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-warning">
+                    <i class="mdi mdi-settings"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                  <h6 class="preview-subject font-weight-normal mb-1">Settings</h6>
+                  <p class="text-gray ellipsis mb-0"> Update dashboard </p>
+                </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-info">
+                    <i class="mdi mdi-link-variant"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                  <h6 class="preview-subject font-weight-normal mb-1">Launch Admin</h6>
+                  <p class="text-gray ellipsis mb-0"> New admin wow! </p>
+                </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <h6 class="p-3 mb-0 text-center">See all notifications</h6>
+            </div>
+          </li>
+          <li class="nav-item nav-logout d-none d-lg-block">
+            <a class="nav-link" href="#">
+              <i class="mdi mdi-power"></i>
+            </a>
+          </li>
+
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+          data-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">
+              <span class="menu-title">Dashboard</span>
+              <i class="mdi mdi-home menu-icon"></i>
+            </a>
+          </li>
+
+          <li class="nav-item">
+
+            <form action="/chartsjsp" class="nav-link" id="newChart" method="post">
+              <!-- <a class="nav-link" href="/chartsjs"> -->
+              <button style="background-color: transparent; border: none;">
+                <span class="menu-title">
+                  <b>Charts</b>
+                  &emsp;
+                  &emsp; &emsp; &emsp; &emsp; &emsp;
+                  &emsp;</span>
+
+                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <!-- </a> -->
+              </button>
+
+              <input type="text" name="homireg" placeholder="2nd numm" id="ttid3ho" style="visibility: hidden;">
+
+
+              <script>
+                document.getElementById("ttid3ho").value = '<%usl.forEach( users=>{ %><%=users.reg_name%><%})%>';
+                console.log("homi inputbox = " + document.getElementById("ttid3ho").value);
+                console.log("homi direct = " + '<%usl.forEach(users=>{%><%=users.reg_name%><%})%>');
+
+              </script>
+
+            </form>
+          </li>
+
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="https://prathampawale-st-flo-map-newmap-3p6a7z.streamlitapp.com/" target="_blank">
+              <span class="menu-title">Flood Visualization</span>
+              <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="https://prathampawale-st-eqmap-map-eartquack-z621tn.streamlitapp.com/"
+              target="_blank">
+              <span class="menu-title">Earthquake 3D</span>
+              <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="https://prathampawale-st-flod-pred-orignal-1-not-edit-7gafv6.streamlitapp.com/"
+              target="_blank">
+              <span class="menu-title">Flood Prediction</span>
+              <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+
+            <form action="/earthqq" class="nav-link" id="newChart" method="post">
+              <!-- <a class="nav-link" href="/chartsjs"> -->
+              <button style="background-color: transparent; border: none;">
+                <span class="menu-title">
+                  <b>Earth</b>
+                  &emsp;
+                  &emsp; &emsp; &emsp; &emsp; &emsp;
+                  &emsp;</span>
+
+                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <!-- </a> -->
+              </button>
+
+              <input type="text" name="homireg22" placeholder="2nd numm" id="ttid3ho22" style="visibility: hidden;">
+
+
+              <script>
+                document.getElementById("ttid3ho22").value = '<%usl.forEach( users=>{ %><%=users.reg_name%><%})%>';
+                console.log("homi inputbox = " + document.getElementById("ttid3ho22").value);
+                console.log("homi direct = " + '<%usl.forEach(users=>{%><%=users.reg_name%><%})%>');
+
+              </script>
+
+            </form>
+          </li>
+
+
+
+
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="page-header">
+            <h3 class="page-title">
+              <span class="page-title-icon bg-gradient-primary text-white me-2">
+                <i class="mdi mdi-home"></i>
+              </span> Dashboard
+            </h3>
+          </div>
+
+
+          <div class="row">
+
+            <!-- ----------- Prayag Card  Start ---------------------- -->
+
+            <style>
+              @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+              * {
+                box-sizing: border-box;
+              }
+
+
+
+              .course {
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+                display: flex;
+                max-width: 100%;
+                margin: 20px;
+                overflow: hidden;
+                width: 700px;
+              }
+
+              .course h6 {
+                opacity: 0.6;
+                margin: 0;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+              }
+
+              .course h2 {
+                letter-spacing: 1px;
+                margin: 10px 0;
+              }
+
+              .course-preview {
+                background-color: #2A265F;
+                color: #fff;
+                padding: 30px;
+                max-width: 250px;
+              }
+
+              .course-preview a {
+                color: #fff;
+                display: inline-block;
+                font-size: 12px;
+                opacity: 0.6;
+                margin-top: 30px;
+                text-decoration: none;
+              }
+
+              .course-info {
+                padding: 30px;
+                position: relative;
+                width: 100%;
+              }
+
+              .progress-container {
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                text-align: right;
+                width: 150px;
+              }
+
+              .progress {
+                background-color: #ddd;
+                border-radius: 3px;
+                height: 5px;
+                width: 100%;
+              }
+
+              .progress::after {
+                border-radius: 3px;
+                background-color: #2A265F;
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 5px;
+                width: 66%;
+              }
+
+              .progress-text {
+                font-size: 10px;
+                opacity: 0.6;
+                letter-spacing: 1px;
+              }
+
+              .btn {
+                background-color: #2A265F;
+                border: 0;
+                border-radius: 50px;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+                color: #fff;
+                font-size: 16px;
+                padding: 12px 25px;
+                position: absolute;
+                bottom: 30px;
+                right: 30px;
+                letter-spacing: 1px;
+              }
+            </style>
+
+            <div class="col-md-5 grid-margin stretch-card" style=" width: 58%; height: 20rem;">
+              <div class="course">
+                <div class="course-preview">
+
+                  <p style="color: rgb(252, 235, 235);font-size: 20px;">
+                    <b>
+                      <% usl.forEach( users=>{ %> <%= users.reg_label %>
+                          <% }) %>
+                    </b>
+                  </p>
+
+
+                  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+                  <i class="fa fa-map-marker" id="myP" style="font-size:70px;color:lightblue;"></i>
+
+                  <button type="button" onclick="myFunction()" style="width: 0;visibility: hidden;opacity: 0;"></button>
+
+                  <script>
+                    myFunction();
+                    function myFunction() {
+                      document.getElementById("myP").style.color = '<% usl.forEach( users=>{ %> <%= users.reg_color %><% }) %>';
+                    }
+                  </script>
+                  <p style="color: rgb(252, 235, 235);font-size: 12px;">
+                    <b>
+                      <% usl.forEach( users=>{ %> <%= users.reg_data1 %>
+                          <% }) %>
+                    </b>
+                  </p>
+
+                </div>
+                <div class="course-info"
+                  style="background-image: url('https://thumbs.dreamstime.com/b/maharashtra-state-india-zoomed-pattern-shape-its-capital-isolated-solid-background-distance-scale-region-preview-193798611.jpg');">
+                  <div class="progress-container">
+
+
+
+                    <link href="https://fonts.googleapis.com/css?family=Maven+Pro&display=swap" rel="stylesheet">
+                    <link rel="stylesheet"
+                      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+                    <style>
+                      #myprogress {
+                        width: 80%;
+                        height: 8px;
+                        background: grey;
+                        margin: auto;
+                      }
+
+                      #mybar {
+                        width: 1%;
+                        height: 8px;
+                        background: #48d18f;
+                        color: white;
+                        text-align: center;
+                      }
+                    </style>
+
+
+
+                    <div id="myprogress">
+                      <div id="mybar">
+                        <span id="incvalue">1%</span>
+                      </div>
+                    </div>
+
+
+                    <script>
+
+                      var elem = document.getElementById("mybar");
+                      var width = 1;
+                      var id = setInterval(frame, 10)
+
+                      function frame() {
+                        if (width >= 100) {
+                          clearInterval(id);
+                        } else {
+                          width++;
+                          elem.style.width = '<% usl.forEach( users=>{ %> <%= users.chg_data %>  <% }) %>';
+                          document.getElementById("incvalue").innerHTML = "-";
+
+                        }
+                      }
+
+                    </script>
+                    <span class="progress-text" style="color: rgb(15, 14, 14);font-size: 12px">
+                      <b> 6/9 Challenges</span><b>
+                      </span>
+
+                  </div>
+                  <h6 style="color: rgb(0, 0, 0);">STATE:
+                    <% usl.forEach( users=>{ %> <%= users.state %>
+                        <% }) %>
+                  </h6>
+                  <br />
+
+                  <h6 style="opacity:0;">c</h6>
+                  <h2 style="color: black;"><b>REGION:
+
+                      <% usl.forEach( users=>{ %> <%= users.reg_name %>
+                          <% }) %>
+                            <b></h2><br />
+                  <span style="font-size: 14px;">Increased by 60%</span><span
+                    style="opacity: 0;">xnjn</span><span></span>
+
+                  <a href="http://192.168.200.250:8501" target="_blank"><button class="btn">Look more >></button></a>
+                </div>
+              </div>
+            </div>
+            <!-- ----------- Prayag Card  End ---------------------- -->
+
+
+
+
+
+            <!-- ------------ Form -------------------------------- -->
+
+            <div class="col-md-5 grid-margin stretch-card" style="float:right; margin-top: -21rem;">
+              <div class="card" style="border-radius: 0.7rem;">
+                <div class="card-body">
+                  <h4 class="card-title">Region</h4>
+                  <div id="whole">
+                    <section>
+                      <form class="forms-sample">
+                        <div class="form-group">
+                          <label for="inputState">State</label>
+                          <select class="form-control" id="inputState" onchange="llp()" style="color: black;">
+                            <option value=" SelectState">Select State</option>
+                            <option value="Andra Pradesh">Andra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madya Pradesh">Madya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Orissa">Orissa</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttaranchal">Uttaranchal</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="West Bengal">West Bengal</option>
+                            <option disabled style="background-color:#aaa; color:#fff">UNION Territories</option>
+                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                            <option value="Daman and Diu">Daman and Diu</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Lakshadeep">Lakshadeep</option>
+                            <option value="Pondicherry">Pondicherry</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputCity1">City</label>
+                          <select class="form-control" id="inputDistrict" style="color: black;">
+                            <option value="">-- select one -- </option>
+                          </select>
+                        </div>
+
+
+
+                        <br>
+                        <input id="submitID" type="button" value="Submit" class="btn btn-gradient-primary me-2"
+                          onclick="latilong()">
+                      </form>
+
+                    </section>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ------------------------- Map ------------------------------------ -->
+          <div class="row">
+
+            <div class="card">
+              <div class="card-body" style="height: 30rem;">
+                <h4 class="card-title">Map</h4>
+                <div id="mapid"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- -------------------- Two Buttons ---------------------------------- -->
+
+
+
+          <div class="row" style="margin-top: 4rem;">
+            <div class="col-12 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Precautions</h4>
+
+                  <div class="row">
+
+                    <!-- -------First---------- -->
+
+
+                    <div class="col-md-5 grid-margin stretch-card">
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="card-title">Sources</h4>
+                          <video autoplay="autoplay" loop="loop" muted="" width="100%" height="auto">
+                            <source
+                              src="https://acropolis-wp-content-uploads.s3.us-west-1.amazonaws.com/earth-resistant.mp4"
+                              type="video/mp4">
+                          </video>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-7 grid-margin stretch-card">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="clearfix">
+                            <h4 class="card-title float-left">Region Statistics</h4>
+
+                            <p class="prec_rs">hiii</p>
+
+
+                            <script>
+
+                              function llp() {
+                                fetch("/map/PREVENTION.json")
+                                  .then(response => response.json())
+                                  .then(data => {
+                                    // add event listener to state select dropdown
+
+                                    const selectedState = inputState.value;
+                                    const preventionData = data.preventions.find(prevention => prevention.state === selectedState);
+                                    const structure = preventionData.structure;
+
+
+
+                                    console.log("hiiiiiiiiiiiiiiiiiiiiiiiiii");
+                                    console.log(selectedState);
+
+                                    var data_region = preventionData.region;
+                                    var data_calamity = preventionData.calamity;
+                                    var data_strucutre = preventionData.structure;
+                                    var data_prevention = preventionData.prevention;
+
+                                    console.log(data_calamity)
+                                    console.log(data_strucutre)
+                                    console.log(data_prevention)
+
+                                    document.getElementById("selected_region").textContent = data_region;
+                                    document.getElementById("selected_region2").textContent = data_calamity;
+                                    document.getElementById("selected_region3").textContent = data_strucutre;
+                                    document.getElementById("selected_region4").textContent = data_prevention;
+
+                                    const preventionList = document.getElementById("selected_region4");
+                                    const listItems = data_prevention.map(measure => `<li>${measure}</li>`).join("");
+                                    preventionList.innerHTML = `<ul>${listItems}</ul>`;
+
+
+                                    document.getElementById("hidee1").style.display = "none";
+                                    document.getElementById("precaution1").style.display = "none";
+
+                                  });
+
+
+                              }
+                            </script>
+
+
+                            <p style="font-size: 20px;"> <span>Your Region: &nbsp;</span> <span
+                                id="selected_region"></span> </p>
+                            <p style="font-size: 20px;"> <span>calamity: &nbsp;</span> <span
+                                id="selected_region2"></span> </p>
+                            <p style="font-size: 20px;"> <span>Structure: &nbsp;</span> <span
+                                id="selected_region3"></span></p>
+
+
+                            <!-- <p class="mb-0 font-weight-light" id="precaution1">
+                              One way to resist ground forces
+                              is to “lift” the
+                              building’s foundation above the earth through a method called base isolation. Base
+                              isolation involves constructing a building on top of flexible pads made of steel, rubber
+                              and lead. When the base moves during an earthquake, the isolators vibrate while the
+                              structure itself remains steady. This effectively helps to absorb seismic waves and
+                              prevent them from traveling through the building.</p> -->
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <!-- ------------Second----------- -->
+
+                    <div class="col-md-7 grid-margin stretch-card">
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="card-title">Precautions</h4>
+
+
+                          <p style="font-size: 16px;" id="selected_region4"></p>
+
+
+                          <!-- <p class="mb-0 font-weight-light" id="hidee1" style="justify-content: center;">
+                            This method involves placing dampers at each level of a building between columns and beams.
+                            Each damper consists of piston heads inside a cylinder filled with silicone oil. When an
+                            earthquake occurs, the building transfers the vibrational energy into the pistons, which
+                            push against the oil. The energy is then transformed into heat, dissipating the force of the
+                            vibrations.</p> -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-5 grid-margin stretch-card">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="clearfix">
+                            <h4 class="card-title float-left">Region Statistics</h4>
+                            <video autoplay="autoplay" loop="loop" muted="" width="100%" height="auto">
+                              <source
+                                src="https://acropolis-wp-content-uploads.s3.us-west-1.amazonaws.com/vibration-control-v3.mp4"
+                                type="video/mp4">
+                            </video>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <!-- <div class="row mt-3">
+                    <div class="col-6 pe-1">
+                      <video autoplay="autoplay" loop="loop" muted="" width="100%" height="auto">
+                        <source
+                          src="https://acropolis-wp-content-uploads.s3.us-west-1.amazonaws.com/earth-resistant.mp4"
+                          type="video/mp4">
+                      </video>
+                      <p>HEllo</p>
+                    </div>
+                    <!-- <div class="col-6 ps-1">
+                      <img src="assets/images/dashboard/img_2.jpg" class="mb-2 mw-100 w-100 rounded" alt="image">
+                      <img src="assets/images/dashboard/img_3.jpg" class="mw-100 w-100 rounded" alt="image">
+                    </div> -->
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+          <div class="container-fluid d-flex justify-content-between">
+            <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Webscalers</span>
+
+
+          </div>
+        </footer>
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+
+  <script src="../map/data.js"></script>
+
+  <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="assets/vendors/chart.js/Chart.min.js"></script>
+  <script src="assets/js/jquery.cookie.js" type="text/javascript"></script>
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="assets/js/off-canvas.js"></script>
+  <script src="assets/js/hoverable-collapse.js"></script>
+  <script src="assets/js/misc.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page -->
+  <script src="assets/js/dashboard.js"></script>
+  <script src="assets/js/todolist.js"></script>
+  <!-- End custom js for this page -->
+
+
+
+
+  <!-- Foot -->
+
+  <!-- Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+
+  <!-- API key -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+
+
+  <script type="text/javascript" src="../map/static/js/config.js"></script>
+
+  <!-- JavaScript -->
+  <script type="text/javascript" src="../map/static/js/challenge_logic.js"></script>
+
+
+
+</body>
+
+</html>

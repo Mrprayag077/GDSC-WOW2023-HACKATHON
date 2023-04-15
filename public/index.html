@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Region</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/finance.css">
+
+    <!-- Leaflet Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
+
+    <style>
+        #map {
+            height: 42rem;
+        }
+    </style>
+
+    <script type="importmap">
+    {
+        "imports":{
+            "three": "./build/three.module.js"
+        }
+    }
+</script>
+
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+
+    <header class="header">
+
+
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">Introduction</a>
+            <a href="#c_finance">Map</a>
+            <a href="#p_finance">Natural disasters</a>
+            <a href="#g_finance">Earlier Cases</a>
+            <a href="#contact">contact</a>
+        </nav>
+
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="search-btn" class="fas fa-search" style="visibility: hidden;"></div>
+        </div>
+
+        <form action="" class="search-form">
+            <input type="search" name="" placeholder="search here..." id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+
+    </header>
+
+
+    <!-- header section ends -->
+
+    <!-- home section starts  -->
+    <section class="homeID" id="home" style=" height: 62rem; background-image: url(/images/bg.png); ">
+        <div class="row" id="homeID">
+            <div class="col-md-7 grid-margin stretch-card">
+                <div class="content">
+                    <div class="split_class" style="width: 100%;">
+                        <link rel="stylesheet" type="text/css" href="assets/css/animation.css">
+                        <h3 style="padding-bottom: 6rem; color: white;">Weather</h3>
+                        <h3 style="color: white;">Visualization</h3>
+                        <p class="animate-text" style="top: 2rem; padding-top: 4rem; padding-bottom: 3rem;">
+                            <span>Map</span>
+                            <span>Charts</span>
+                            <span>Graphs</span>
+                            <span>Tabulets</span>
+                        </p>
+
+                        <form class="forms-sample" action="/" method="post">
+                            <div class="form-group row">
+                                <div class="col-sm-9">
+                                    <select class="form-control" id="inputState" onchange="myr2()"
+                                        style="color: black; width: 40rem; height: 4rem; font-size: 1.5rem; border-radius: 1rem; border: 2px solid #9966ff; margin-bottom: 3rem;">
+                                        <option value=" SelectState">Select Region</option>
+                                        <option value="Andra Pradesh">kothrud</option>
+                                        <option value="Andra Pradesh">viman nagar</option>
+                                        <option value="Andra Pradesh">Berlin</option>
+
+                                        <option value="Andra Pradesh">Andra Pradesh</option>
+                                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                        <option value="Assam">Assam</option>
+                                        <option value="Bihar">Bihar</option>
+                                        <option value="Chhattisgarh">Chhattisgarh</option>
+                                        <option value="Goa">Goa</option>
+                                        <option value="Gujarat">Gujarat</option>
+                                        <option value="Haryana">Haryana</option>
+                                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                        <option value="Jharkhand">Jharkhand</option>
+                                        <option value="Karnataka">Karnataka</option>
+                                        <option value="Kerala">Kerala</option>
+                                        <option value="Madya Pradesh">Madya Pradesh</option>
+                                        <option value="Maharashtra">Maharashtra</option>
+                                        <option value="Manipur">Manipur</option>
+                                        <option value="Meghalaya">Meghalaya</option>
+                                        <option value="Mizoram">Mizoram</option>
+                                        <option value="Nagaland">Nagaland</option>
+                                        <option value="Orissa">Orissa</option>
+                                        <option value="Punjab">Punjab</option>
+                                        <option value="Rajasthan">Rajasthan</option>
+                                        <option value="Sikkim">Sikkim</option>
+                                        <option value="Tamil Nadu">Tamil Nadu</option>
+                                        <option value="Telangana">Telangana</option>
+                                        <option value="Tripura">Tripura</option>
+                                        <option value="Uttaranchal">Uttaranchal</option>
+                                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                        <option value="West Bengal">West Bengal</option>
+                                        <option disabled style="background-color:#aaa; color:#fff">UNION Territories
+                                        </option>
+                                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands
+                                        </option>
+                                        <option value="Chandigarh">Chandigarh</option>
+                                        <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                        <option value="Daman and Diu">Daman and Diu</option>
+                                        <option value="Delhi">Delhi</option>
+                                        <option value="Lakshadeep">Lakshadeep</option>
+                                        <option value="Pondicherry">Pondicherry</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <script>
+                                function myr2() {
+                                    var x2 = document.getElementById("inputState");
+                                    var i2 = x2.selectedIndex;
+                                    var rr2 = x2.options[i2].text;
+                                    console.log(rr2);
+                                    var txt2 = document.getElementById("ttid2").value
+                                        = rr2
+                                }
+                            </script>
+
+                            <button class="btn btn-gradient-primary me-2">Click Here!</button>
+
+                            <input type="text" name="n33" placeholder="2nd numm" id="ttid2"
+                                style="opacity: 0;visibility: hidden;">
+                            <br /><br />
+
+
+                        </form>
+                        <script>
+                            const txts = document.querySelector(".animate-text").children,
+                                txtsLen = txts.length;
+                            let index = 0;
+                            const textInTimer = 1500,  //Speed
+                                textOutTimer = 1300;
+
+                            function animateText() {
+                                for (let i = 0; i < txtsLen; i++) {
+                                    txts[i].classList.remove("text-in", "text-out");
+                                }
+                                txts[index].classList.add("text-in");
+
+                                setTimeout(function () {
+                                    txts[index].classList.add("text-out");
+                                }, textOutTimer)
+
+                                setTimeout(function () {
+
+                                    if (index == txtsLen - 1) {
+                                        index = 0;
+                                    }
+                                    else {
+                                        index++;
+                                    }
+                                    animateText();
+                                }, textInTimer);
+                            }
+
+                            window.onload = animateText;
+                        </script>
+
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+            <div class="col-md-5 grid-margin stretch-card " id="box" style="padding-top: 1.5rem;">
+                <canvas class="web-gl"></canvas>
+            </div>
+            <script type="module" src="./client.js"></script>
+        </div>
+
+
+
+    </section>
+
+
+
+    <!-- home section ends -->
+
+    <!-- about section starts  -->
+
+    <section class="about" id="about">
+
+        <h1 class="heading"> Introduction </h1>
+
+        <div class="row">
+
+            <div class="content">
+                <h3>Weather Visualization</h3>
+                <p>In a general sense, a weather map is a map that visualizes the weather conditions over a certain
+                    geographical area. The weather events depicted can be past, present or forecast for the future. From
+                    a
+                    meteorological point of view,
+                    a weather map shows the current state of the atmosphere over a larger area.</p>
+                <p>Weather maps can be used to visualize weather data. The maps show the current weather situation in
+                    real
+                    time, but can also be used to forecast the coming weather. Possible weather hazards are thus
+                    recognised
+                    at an early stage. </p>
+            </div>
+        </div>
+
+        <div class="box-container">
+
+        </div>
+
+    </section>
+
+    <!-- about section ends -->
+
+
+    <section class="c_finance" id="c_finance">
+
+        <h1 class="heading"> Map </h1>
+        <div id="map"></div>
+
+    </section>
+
+
+
+
+    <section class="p_finance" id="p_finance" style="background-color: black;">
+
+        <h1 class="heading">Natural Disasters</h1>
+
+        <!-- Slider End-->
+
+        <!-- testimonial Slider Start -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/slider.css">
+        <link rel="stylesheet" type="text/css" href="css/animation.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
+        <script src="js/slider.js"></script>
+
+
+        <section class="test-section" style="text-align: center; ">
+            <div class="container">
+
+            </div>
+            <div class="testimonials-carousel-wrap">
+                <div class="listing-carousel-button listing-carousel-button-next"><i class="fa fa-caret-right"
+                        style="color: #fff"></i></div>
+                <div class="listing-carousel-button listing-carousel-button-prev"><i class="fa fa-caret-left"
+                        style="color: #fff"></i></div>
+                <div class="testimonials-carousel">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="testi-item">
+                                    <div class="testi-avatar"><img src="images/4.jpg"></div>
+                                    <div class="testimonials-text-before"><i class="fa fa-quote-right"></i></div>
+                                    <div class="testimonials-text">
+
+                                        <a href="#" class="text-link"></a>
+                                        <div class="testimonials-avatar">
+                                            <h3>Earthquake</h3>
+                                        </div>
+
+                                        <p>Any sudden shaking of the ground caused by the passage of seismic waves
+                                            through Earth’s
+                                            rocks.Earthquakes occur most often along geologic faults, narrow
+                                            zones where rock masses move in relation to one another. It is estimated
+                                            that 80
+                                            percent of the energy presently released in earthquakes comes from those
+                                            whose
+                                            epicentres are in this belt.</p>
+
+                                    </div>
+                                    <div class="testimonials-text-after"><i class="fa fa-quote-left"></i></div>
+                                </div>
+                            </div>
+
+                            <!--second--->
+                            <div class="swiper-slide">
+                                <div class="testi-item">
+                                    <div class="testi-avatar"><img src="images/6.jpg"></div>
+                                    <div class="testimonials-text-before"><i class="fa fa-quote-right"></i></div>
+                                    <div class="testimonials-text">
+
+                                        <a href="#" class="text-link"></a>
+                                        <div class="testimonials-avatar">
+                                            <h3>Flood</h3>
+                                        </div>
+
+                                        <p>Often caused by heavy rainfall, rapid snowmelt or a storm surge from a
+                                            tropical cyclone
+                                            or tsunami in coastal areas.
+                                            Between 1998-2017, floods affected more than 2 billion people
+                                            worldwide.Between 80-90%
+                                            of all documented disasters from natural
+                                            hazards during the past 10 years have resulted from floods, droughts,
+                                            tropical
+                                            cyclones, heat waves and severe storms.</p>
+
+                                    </div>
+                                    <div class="testimonials-text-after"><i class="fa fa-quote-left"></i></div>
+                                </div>
+                            </div>
+                            <!--third-->
+
+                            <div class="swiper-slide">
+                                <div class="testi-item">
+                                    <div class="testi-avatar"><img src="images/21.jpg"></div>
+                                    <div class="testimonials-text-before"><i class="fa fa-quote-right"></i></div>
+                                    <div class="testimonials-text">
+
+                                        <a href="#" class="text-link"></a>
+                                        <div class="testimonials-avatar">
+                                            <h3>Tsunami</h3>
+                                        </div>
+
+                                        <p>A series of extremely long waves caused by a large and sudden displacement of
+                                            the
+                                            ocean,
+                                            usually the result of an earthquake below or near the ocean floor. This
+                                            force creates
+                                            waves
+                                            that radiate outward in all directions away from their source, sometimes
+                                            crossing
+                                            entire ocean basins.
+                                            About 80% of tsunamis happen within the Pacific Ocean’s “Ring of Fire.”
+                                            Tsunamis can travel at speeds of about 500 miles or 805 kilometers an hour,
+                                            almost as
+                                            fast as a jet plane.</p>
+
+                                    </div>
+                                    <div class="testimonials-text-after"><i class="fa fa-quote-left"></i></div>
+                                </div>
+                            </div>
+
+                            <!--fourth-->
+                            <div class="swiper-slide">
+                                <div class="testi-item">
+                                    <div class="testi-avatar"><img src="images/5.png"></div>
+                                    <div class="testimonials-text-before"><i class="fa fa-quote-right"></i></div>
+                                    <div class="testimonials-text">
+
+                                        <a href="#" class="text-link"></a>
+                                        <div class="testimonials-avatar">
+                                            <h3>Landslide</h3>
+                                        </div>
+
+                                        <p>Defined as the movement of a mass of rock, debris, or earth down a slope.
+                                            Landslides
+                                            are a type of "mass wasting," which denotes any down-slope
+                                            movement of soil and rock under the direct influence of gravity.Slope
+                                            movement occurs
+                                            when forces acting down-slope (mainly due to gravity) exceed the
+                                            strength of the earth materials that compose the slope.Landslides are
+                                            generally
+                                            classified by type of movement and type of material.</p>
+
+                                    </div>
+                                    <div class="testimonials-text-after"><i class="fa fa-quote-left"></i></div>
+                                </div>
+                            </div>
+                            <!--testi end-->
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tc-pagination"></div>
+            </div>
+        </section>
+
+
+
+        <!-- testimonial Slider End -->
+
+
+
+        </div> -->
+
+    </section>
+
+
+
+
+    <section class=g_finance id=g_finance>
+
+        <h1 class="heading"> Some Cases </h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <a href="Case1.html">
+                    <h2>CASE 1</h2>
+                    <p>
+                        <h3>1996 Amarnath Yatra tragedy</h3>
+                    </p>
+                    <p>Amarnath Yatra tragedy (1996) is referred to the deaths of over 250 pilgrims in 1996 in Jammu and
+                        Kashmir state in India due to bad weather. </p>
+                </a>
+
+
+            </div>
+
+            <div class="box">
+                <a href="Case2.html">
+                    <h3>CASE 2</h3>
+                    <h3>2006 Surat Flood.
+                    </h3>
+                    </p>
+                    <p> The 2006 Surat flood occurred over 7–10 August 2006, which affected Surat, India, and nearby
+                        villages. About 80–95% of Surat was flooded.
+                    </p>
+                </a>
+
+            </div>
+
+            <div class="box">
+                <a href="Case3.html">
+                    <h3>CASE 3</h3>
+                    <p>
+                        <h3>2011 North Indian Cold Wave</h3>
+                    </p>
+                    <p>North Indian Cold Wave (2011) is the cold snap affected across northern parts of India in the
+                        winter
+                        of 2011, killing more than 130 people.
+                    </p>
+                </a>
+            </div>
+
+            <div class="box">
+                <a href="Case4.html">
+                    <h3>CASE 4</h3>
+                    <p>
+                        <h3>2012 Indian cold wave</h3>
+                    </p>
+                    <p>Indian cold wave during the winter months of 2012 killed at least 92 people across northern and
+                        eastern India.</p>
+                    </p>
+                </a>
+            </div>
+
+            <div class="box">
+                <a href="Case5.html">
+                    <h3>CASE 5</h3>
+                    <p>
+                        <h3>2016 Siachen Glacier avalanche.</h3>
+                    </p>
+                    <p>On 3 February 2016, an avalanche hit an Indian military base in northern Siachen Glacier region,
+                        trapping 10 soldiers under deep snow.
+
+                    </p>
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="contact" id="contact">
+
+        <h1 class="heading"> contact us </h1>
+
+        <div class="row">
+
+            <form action="">
+                <h3>get in touch</h3>
+                <input type="text" placeholder="Name" class="box">
+                <input type="email" placeholder="Email" class="box">
+                <input type="tel" placeholder="Phone" class="box" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                <textarea name="" placeholder="Message" class="box" id="" cols="30" rows="10"></textarea>
+                <input type="submit" value="send message" class="btn">
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+
+    <script>
+        var map = L.map('map').setView([51.505, -0.09], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+    </script>
+
+</body>
+
+</html>

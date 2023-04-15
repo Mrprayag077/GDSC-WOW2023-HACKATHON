@@ -1,0 +1,79 @@
+{
+    "preventions": [
+        {
+            "state": "Kerala",
+            "region": "Meloor",
+            "calamity": "Flood",
+            "structure": "Water proof concrete foundation",
+            "prevention": [
+                "Creating an earthquake emergency kit: Prepare a kit that includes essentials such as food, water, first aid supplies, flashlights, and a battery-powered radio. Keep it in a readily accessible place.",
+                "Securing heavy furniture and objects: Anchor or secure heavy furniture, appliances, and objects to prevent them from falling during an earthquake. Use brackets, straps, or other securing devices to secure them to the walls or floor.",
+                "Identifying safe spots in your home: Identify safe spots in your home, such as under sturdy furniture like a table or desk, away from windows, and practice 'Drop, Cover, and Hold On' drills regularly. This can help protect you from falling debris during an earthquake.",
+                "Reinforcing your home's structure: Consider retrofitting your home to meet earthquake-resistant standards, such as using earthquake-resistant materials and designs. Consult with a professional engineer or contractor for guidance.",
+                "Following building codes and regulations: Follow local building codes and regulations for earthquake-prone areas when constructing new structures. These codes are designed to ensure buildings are built to withstand seismic activity.",
+                "Securing hazards: Identify and secure potential hazards in and around your home, such as heavy objects on high shelves, unsecured water heaters, or loose bricks or masonry, to prevent them from becoming hazards during an earthquake.",
+                "Being informed: Stay informed about earthquake risks and preparedness measures in your area. Follow updates and recommendations from local emergency management agencies, and be aware of evacuation routes and designated safe areas."
+            ]
+        },
+        {
+            "state": "Assam",
+            "region": "Mazbat",
+            "calamity": "Earthquake",
+            "structure": "High grid of steal beam",
+            "prevention": "Base isolators are like shock absorbers between the building and the ground motion, letting a building slide back and forth while remaining upright during a quake."
+        },
+        {
+            "state": "Himalya",
+            "region": "Sikkim,Mantam",
+            "calamity": "Landslide",
+            "structure": "",
+            "prevention": [
+                "Retaining walls: Retaining walls should be made of sturdy construction material, whether it's stone, brick or steel. Drainage materials located behind the wall will also help to increase its stability and keep the construction stable even if a landslide does occur. The use of gutters to directrain flow underneath the ground will also help prevent landslides.",
+                "Building diverting Debris pathways: Another option for preventing landslides on the property you are building is through creating dedicated debris pathways.  With the help of your retaining walls, these will help to divert the flow of landslide debris away from your property, reducing the chances of it becoming damaged when massive rain hits.",
+                "Fixed mesh structures: Mesh is suspended at a distance and falling rocks are directed towards the foot of the cliff or outcrop. Mesh is fixed more closely against the wall,the method is considered active because the mesh prevents rocks from falling. The mesh is fixed using wall anchors which can be used alongside retention anchors."
+            ]
+        },
+        {
+            "state": "Manipur",
+            "region": "Imphal",
+            "calamity": "Landslide",
+            "structure": "",
+            "prevention": [
+                "Retaining walls: Retaining walls should be made of sturdy construction material, whether it's stone, brick or steel. Drainage materials located behind the wall will also help to increase its stability and keep the construction stable even if a landslide does occur. The use of gutters to directrain flow underneath the ground will also help prevent landslides.",
+                "Building diverting Debris pathways: Another option for preventing landslides on the property you are building is through creating dedicated debris pathways.  With the help of your retaining walls, these will help to divert the flow of landslide debris away from your property, reducing the chances of it becoming damaged when massive rain hits.",
+                "Fixed mesh structures: Mesh is suspended at a distance and falling rocks are directed towards the foot of the cliff or outcrop. Mesh is fixed more closely against the wall,the method is considered active because the mesh prevents rocks from falling. The mesh is fixed using wall anchors which can be used alongside retention anchors."
+            ]
+        },
+        {
+            "state": "Odisha",
+            "region": "Puri",
+            "calamity": "Earthquake",
+            "structure": "High grid of steal beam",
+            "prevention": "Base isolators are like shock absorbers between the building and the ground motion, letting a building slide back and forth while remaining upright during a quake."
+        },
+        {
+            "state": "Mumbai",
+            "region": "Vaitarna",
+            "calamity": "Flood",
+            "structure": "Water proof concrete foundation",
+            "prevention": [
+                "Proper water drainage system",
+                "Use drainage pumps complusory"
+            ]
+        },
+        {
+            "state": "Jammu&Kashmir",
+            "region": "Tessa",
+            "calamity": "Earthquake",
+            "structure": "High grid of steal beam",
+            "prevention": "conventional construction system in Kashmir that involves a thinner style of wall construction, comprising timber framing with bricks or stone masonry infills "
+        },
+        {
+            "state": "West bengal",
+            "region": "Kolkata",
+            "calamity": "Cyclone",
+            "structure": "Lightweight flat roofs are easily blown off in high winds.Therefore the roof Pitch should not be less than 22º.",
+            "prevention": "Use METAL STRAPS over the top of the rafters."
+        }
+    ]
+}

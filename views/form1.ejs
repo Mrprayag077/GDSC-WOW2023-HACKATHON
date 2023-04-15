@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multistep form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<body>
+    <div class="container">
+        <header>Data Collection Portal</header>
+        <div class="progress-bar">
+            <div class="step">
+                <p>Location</p>
+                <div class="bullet">
+                    <span>1</span>
+                </div>
+                <div class="check fas fa-check"></div>
+            </div>
+            <div class="step">
+                <p>Image</p>
+                <div class="bullet">
+                    <span>2</span>
+                </div>
+                <div class="check fas fa-check"></div>
+            </div>
+            <div class="step">
+                <p>About</p>
+                <div class="bullet">
+                    <span>3</span>
+                </div>
+                <div class="check fas fa-check"></div>
+            </div>
+
+
+            <div class="step">
+                <p>Submit</p>
+                <div class="bullet">
+                    <span>4</span>
+                </div>
+                <div class="check fas fa-check"></div>
+            </div>
+
+
+            <div class="step">
+                <p></p>
+
+                <div class="check fas fa-check"></div>
+            </div>
+        </div>
+        <div class="form-outer">
+            <form action="#">
+                <div class="page slide-page">
+                    <div class="title">Basic Info:</div>
+                    <!-- <span>*if wrong fill manually</span> -->
+                    <div class="field">
+                        <div class="label">State</div>
+                        <input type="text" id="state1" value="11" />
+                    </div>
+
+                    <div class="field">
+                        <div class="label">City</div>
+                        <input type="text" id="city1" required />
+                    </div>
+
+
+
+
+                    <div class="field">
+                        <div class="label">Address</div>
+                        <input type="text" id="address1" required />
+                    </div>
+
+                    <div class="field">
+                        <div class="label">Latitude & Longitude </div>
+                        <b> <input type="text" id="longi" required /></b>
+                    </div>
+
+
+                    <div class="field">
+                        <button class="firstNext next">Next</button>
+                    </div>
+                </div>
+
+                <div class="page">
+                    <div class="title">Images:</div>
+
+
+
+
+                    <div class="field" style="text-align: left;">Upload Images: where the disaster is clearly visible,
+                        try to take vitile imgs,
+                        focus on main distrcation</div>
+
+
+                    <input type="file" id="image-input" accept="image/*" multiple>
+                    <br />
+                    <div class="image-wrapper">
+                        <br />
+                        <div class="preview-container"></div>
+                    </div>
+                    <div class="image-popup">
+                        <img id="popup-image">
+                        <a href="#" class="close-btn">&times;</a>
+                    </div>
+
+
+
+
+
+                    <style>
+                        .image-wrapper {
+                            display: flex;
+                            overflow-x: auto;
+                            white-space: nowrap;
+                            -webkit-overflow-scrolling: touch;
+                        }
+
+                        .preview-container {
+                            display: inline-block;
+                        }
+
+                        .preview-image {
+                            max-width: 100%;
+                            max-height: 100px;
+                            cursor: pointer;
+                            margin-right: 10px;
+                            margin-bottom: 10px;
+                        }
+
+                        .image-popup {
+                            display: none;
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background-color: rgba(0, 0, 0, 0.7);
+                            z-index: 1;
+                            text-align: center;
+                        }
+
+                        #popup-image {
+                            max-width: 90%;
+                            max-height: 90%;
+                            margin-top: 30px;
+                        }
+
+                        .close-btn {
+                            position: absolute;
+                            top: 10px;
+                            right: 20px;
+                            font-size: 30px;
+                            color: white;
+                            text-decoration: none;
+                        }
+                    </style>
+
+
+                    <script>
+                        const imageInput = document.getElementById("image-input");
+                        const previewContainer = document.querySelector(".preview-container");
+                        const popupWrapper = document.querySelector(".image-popup");
+                        const popupImage = document.getElementById("popup-image");
+                        const closeBtn = document.querySelector(".close-btn");
+
+                        imageInput.addEventListener("change", function () {
+                            const files = this.files;
+
+                            for (let i = 0; i < files.length; i++) {
+                                const file = files[i];
+
+                                // check if file is an image
+                                if (file && file.type.startsWith("image/")) {
+                                    // create a FileReader to read and display the image
+                                    const reader = new FileReader();
+
+                                    reader.onload = function () {
+                                        const previewImage = document.createElement("img");
+                                        previewImage.src = reader.result;
+                                        previewImage.classList.add("preview-image");
+                                        previewImage.dataset.index = i;
+                                        previewContainer.appendChild(previewImage);
+                                    }
+
+                                    reader.readAsDataURL(file);
+                                }
+                            }
+                        });
+
+                        previewContainer.addEventListener("click", function (event) {
+                            if (event.target.classList.contains("preview-image")) {
+                                // set popup image source to the same as the clicked image
+                                popupImage.src = event.target.src;
+                                popupImage.dataset.index = event.target.dataset.index;
+
+                                // show the popup
+                                popupWrapper.style.display = "block";
+                            }
+                        });
+
+                        closeBtn.addEventListener("click", function (event) {
+                            event.preventDefault();
+                            // hide the popup when the user clicks the close button
+                            popupWrapper.style.display = "none";
+                        });
+
+                        popupWrapper.addEventListener("click", function (event) {
+                            if (event.target === popupWrapper) {
+                                // hide the popup when the user clicks outside the image
+                                popupWrapper.style.display = "none";
+                            }
+                        });
+
+                    </script>
+
+
+                    <div style="padding-bottom: 20%;"></div>
+                    <div class="field btns">
+                        <button class="prev-1 prev">Previous</button>
+                        <button class="next-1 next">Next</button>
+                    </div>
+                </div>
+                <div class="page">
+                    <div class="title">About:</div>
+                    <div class="field">
+                        <div class="label">Type of Harazd/Calamitiy</div>
+                        <input type="text" />
+                    </div>
+                    <div class="field">
+                        <div class="label">Description</div>
+                        <input type="text" />
+                    </div>
+                    <div class="field btns">
+                        <button class="prev-2 prev">Previous</button>
+                        <button class="next-2 next">Next</button>
+                    </div>
+                </div>
+
+
+                <div class="page">
+                    <div class="title">Submission</div>
+
+                    <form>
+                        <input type="checkbox" class="label" id="fruit1" name="fruit-1" value="Apple">
+                        <label for="fruit1" class="label">
+                            All the data provide by me is true and not any false claim. I take
+                            whole responsibility.
+                        </label>
+                    </form>
+                    <style>
+                        input[type=checkbox]+label {
+                            display: block;
+                            margin: 0.2em;
+                            cursor: pointer;
+                            padding: 0.2em;
+                        }
+
+                        input[type=checkbox] {
+                            display: none;
+                        }
+
+                        input[type=checkbox]+label:before {
+                            content: "\2714";
+                            border: 0.1em solid #000;
+                            border-radius: 0.2em;
+                            display: inline-block;
+                            width: 1em;
+                            height: 1em;
+                            padding-left: 0.2em;
+                            padding-bottom: 0.3em;
+                            margin-right: 0.2em;
+                            vertical-align: bottom;
+                            color: transparent;
+                            transition: .2s;
+                        }
+
+                        input[type=checkbox]+label:active:before {
+                            transform: scale(0);
+                        }
+
+                        input[type=checkbox]:checked+label:before {
+                            background-color: MediumSeaGreen;
+                            border-color: MediumSeaGreen;
+                            color: #fff;
+                        }
+
+                        input[type=checkbox]:disabled+label:before {
+                            transform: scale(1);
+                            border-color: #aaa;
+                        }
+
+                        input[type=checkbox]:checked:disabled+label:before {
+                            transform: scale(1);
+                            background-color: #bfb;
+                            border-color: #bfb;
+                        }
+                    </style>
+                    <div class="field">
+                        <div class="label">Phone Number</div>
+                        <input type="Number" />
+                    </div>
+
+                    <div class="field">
+                        <div class="label">Full Name</div>
+                        <input type="Number" />
+                    </div>
+
+                    <div class="field btns">
+                        <button class="prev-3 prev">Previous</button>
+                        <button class="next-3 next" id="" onclick='myfun()'>Submit</button>
+                    </div>
+                </div>
+                <script>
+
+                    function myfun() {
+                        alert("Your Form Data Saved Successfully. Thank you for providing the Data");
+                        location.reload();
+                    };
+                </script>
+
+
+
+
+
+
+                <!-- <div class="page">
+                    <div class="title">Login Details:</div>
+                    <div class="field">
+                        <div class="label">Username</div>
+                        <input type="text" required />
+                    </div>
+                    <div class="field">
+                        <div class="label">Password</div>
+                        <input type="password" required />
+                    </div>
+                    <div class="field btns">
+                        <button class="prev-5 prev">Previous</button>
+                        <button class="submit">Submit</button>
+                    </div>
+                </div> -->
+            </form>
+        </div>
+    </div>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            font-family: "Poppins", sans-serif;
+        }
+
+        :root {
+            --primary: white;
+            --secondary: #333;
+            --errorColor: red;
+            --stepNumber: 6;
+            --containerWidth: 600px;
+            --bgColor: #333;
+            --inputBorderColor: lightgray;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background: var(--bgColor);
+            background: url('http://thecodeplayer.com/uploads/media/gs.png');
+        }
+
+        ::selection {
+            color: #fff;
+            background: var(--primary);
+        }
+
+        .container {
+            width: var(--containerWidth);
+            background: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 50px 35px 10px 35px;
+        }
+
+        .container header {
+            font-size: 35px;
+            font-weight: 600;
+            margin: 0 0 30px 0;
+        }
+
+        .container .form-outer {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .container .form-outer form {
+            display: flex;
+            width: calc(100% * var(--stepNumber));
+        }
+
+        .form-outer form .page {
+            width: calc(100% / var(--stepNumber));
+            transition: margin-left 0.3s ease-in-out;
+        }
+
+        .form-outer form .page .title {
+            text-align: left;
+            font-size: 25px;
+            font-weight: 500;
+        }
+
+        .form-outer form .page .field {
+            width: var(--containerWidth);
+            height: 45px;
+            margin: 45px 0;
+            display: flex;
+            position: relative;
+        }
+
+        form .page .field .label {
+            position: absolute;
+            top: -30px;
+            font-weight: 500;
+        }
+
+        form .page .field input {
+            box-sizing: border-box;
+            height: 100%;
+            width: 100%;
+            border: 1px solid var(--inputBorderColor);
+            border-radius: 5px;
+            padding-left: 15px;
+            margin: 0 1px;
+            font-size: 18px;
+            transition: border-color 150ms ease;
+        }
+
+        form .page .field input.invalid-input {
+            border-color: var(--errorColor);
+        }
+
+        form .page .field select {
+            width: 100%;
+            padding-left: 10px;
+            font-size: 17px;
+            font-weight: 500;
+        }
+
+        form .page .field button {
+            width: 100%;
+            height: calc(100% + 5px);
+            border: none;
+            background: var(--secondary);
+            margin-top: -20px;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: 0.5s ease;
+        }
+
+        form .page .field button:hover {
+            background: #000;
+        }
+
+        form .page .btns button {
+            margin-top: -20px !important;
+        }
+
+        form .page .btns button.prev {
+            margin-right: 3px;
+            font-size: 17px;
+        }
+
+        form .page .btns button.next {
+            margin-left: 3px;
+        }
+
+        .container .progress-bar {
+            display: flex;
+            margin: 40px 0;
+            user-select: none;
+        }
+
+        .container .progress-bar .step {
+            text-align: center;
+            width: 100%;
+            position: relative;
+        }
+
+        .container .progress-bar .step p {
+            font-weight: 500;
+            font-size: 18px;
+            color: #000;
+            margin-bottom: 8px;
+        }
+
+        .progress-bar .step .bullet {
+            height: 25px;
+            width: 25px;
+            border: 2px solid #000;
+            display: inline-block;
+            border-radius: 50%;
+            position: relative;
+            transition: 0.2s;
+            font-weight: 500;
+            font-size: 17px;
+            line-height: 25px;
+        }
+
+        .progress-bar .step .bullet.active {
+            border-color: var(--primary);
+            background: var(--primary);
+        }
+
+        .progress-bar .step .bullet span {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .progress-bar .step .bullet.active span {
+            display: none;
+        }
+
+        .progress-bar .step .bullet:before,
+        .progress-bar .step .bullet:after {
+            position: absolute;
+            content: "";
+            bottom: 11px;
+            right: -51px;
+            height: 3px;
+            width: 44px;
+            background: #262626;
+        }
+
+        .progress-bar .step .bullet.active:after {
+            background: var(--primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: animate 0.3s linear forwards;
+        }
+
+        @keyframes animate {
+            100% {
+                transform: scaleX(1);
+            }
+        }
+
+        .progress-bar .step:last-child .bullet:before,
+        .progress-bar .step:last-child .bullet:after {
+            display: none;
+        }
+
+        .progress-bar .step p.active {
+            color: var(--primary);
+            transition: 0.2s linear;
+        }
+
+        .progress-bar .step .check {
+            position: absolute;
+            left: 50%;
+            top: 70%;
+            font-size: 15px;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        .progress-bar .step .check.active {
+            display: block;
+            color: #fff;
+        }
+
+        @media screen and (max-width: 660px) {
+            :root {
+                --containerWidth: 400px;
+            }
+
+            .progress-bar .step p {
+                display: none;
+            }
+
+            .progress-bar .step .bullet::after,
+            .progress-bar .step .bullet::before {
+                display: none;
+            }
+
+            .progress-bar .step .bullet {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .progress-bar .step .check {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                font-size: 15px;
+                transform: translate(-50%, -50%);
+                display: none;
+            }
+
+            .step {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        @media screen and (max-width: 490px) {
+            :root {
+                --containerWidth: 100%;
+            }
+
+            .container {
+                box-sizing: border-box;
+                border-radius: 0;
+            }
+        }
+    </style>
+    <script>
+
+
+        if ("geolocation" in navigator) {
+            // get user's location
+            navigator.geolocation.getCurrentPosition(function (position) {
+                // get latitude and longitude coordinates
+                const lat = position.coords.latitude;
+                const lng = position.coords.longitude;
+                document.getElementById('longi').value = lat + ' ' + ',' + ' ' + lng;
+                // reverse-geocode coordinates using OpenStreetMap Nominatim API
+                const apiUrl = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}`;
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        // extract state and city names from response
+                        const state = data.address.state;
+                        const city = data.address.city;
+                        const district = data.address.district;
+                        const address = data.display_name;
+
+                        document.getElementById("state1").value = state;
+                        document.getElementById("city1").value = city;
+                        document.getElementById("address1").value = address;
+                        // do something with state and city names
+                        console.log(`Your current location is ${city}, ${state}`);
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+            });
+        } else {
+            console.error("Geolocation is not supported by this browser.");
+        }
+
+        initMultiStepForm();
+
+        function initMultiStepForm() {
+            const progressNumber = document.querySelectorAll(".step").length;
+            const slidePage = document.querySelector(".slide-page");
+            const submitBtn = document.querySelector(".submit");
+            const progressText = document.querySelectorAll(".step p");
+            const progressCheck = document.querySelectorAll(".step .check");
+            const bullet = document.querySelectorAll(".step .bullet");
+            const pages = document.querySelectorAll(".page");
+            const nextButtons = document.querySelectorAll(".next");
+            const prevButtons = document.querySelectorAll(".prev");
+            const stepsNumber = pages.length;
+
+            if (progressNumber !== stepsNumber) {
+                console.warn(
+                    "Error, number of steps in progress bar do not match number of pages"
+                );
+            }
+
+            document.documentElement.style.setProperty("--stepNumber", stepsNumber);
+
+            let current = 1;
+
+            for (let i = 0; i < nextButtons.length; i++) {
+                nextButtons[i].addEventListener("click", function (event) {
+                    event.preventDefault();
+
+                    inputsValid = validateInputs(this);
+                    // inputsValid = true;
+
+                    if (inputsValid) {
+                        slidePage.style.marginLeft = `-${(100 / stepsNumber) * current
+                            }%`;
+                        bullet[current - 1].classList.add("active");
+                        progressCheck[current - 1].classList.add("active");
+                        progressText[current - 1].classList.add("active");
+
+                        current += 1;
+                    }
+                });
+            }
+
+            for (let i = 0; i < prevButtons.length; i++) {
+                prevButtons[i].addEventListener("click", function (event) {
+                    event.preventDefault();
+                    slidePage.style.marginLeft = `-${(100 / stepsNumber) * (current - 2)
+                        }%`;
+                    bullet[current - 2].classList.remove("active");
+                    progressCheck[current - 2].classList.remove("active");
+                    progressText[current - 2].classList.remove("active");
+                    current -= 1;
+                });
+            }
+            submitBtn.addEventListener("click", function () {
+                bullet[current - 1].classList.add("active");
+                progressCheck[current - 1].classList.add("active");
+                progressText[current - 1].classList.add("active");
+                current += 1;
+                setTimeout(function () {
+                    alert("Your Form Successfully Signed up");
+                    location.reload();
+                }, 800);
+            });
+
+            function validateInputs(ths) {
+                let inputsValid = true;
+
+                const inputs =
+                    ths.parentElement.parentElement.querySelectorAll("input");
+                for (let i = 0; i < inputs.length; i++) {
+                    const valid = inputs[i].checkValidity();
+                    if (!valid) {
+                        inputsValid = false;
+                        inputs[i].classList.add("invalid-input");
+                    } else {
+                        inputs[i].classList.remove("invalid-input");
+                    }
+                }
+                return inputsValid;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

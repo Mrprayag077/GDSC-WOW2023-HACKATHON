@@ -1,0 +1,343 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [76.9245, 8.5255]
+      },
+      "properties": {
+        "district": "Thiruvananthapuram",
+        "fatalities": 11,
+        "no_of_camps": 94,
+        "actual_rainfall_in_mm": 373.8,
+        "normal_rainfall_in_mm": 142,
+        "no_of_landslides": 0,
+        "full_damaged_houses": 111
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [76.607, 8.882]
+      },
+      "properties": {
+        "district": "Kollam",
+        "fatalities": 5,
+        "no_of_camps": 168,
+        "actual_rainfall_in_mm": 644.1,
+        "normal_rainfall_in_mm": 258.7,
+        "no_of_landslides": 2,
+        "full_damaged_houses": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [76.786, 9.264]
+      },
+      "properties": {
+        "district": "Pathanamthitta",
+        "fatalities": 3,
+        "no_of_camps": 4352,
+        "actual_rainfall_in_mm": 764.9,
+        "normal_rainfall_in_mm": 352.7,
+        "no_of_landslides": 8,
+        "full_damaged_houses": 741
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [76.332, 9.492]
+      },
+      "properties": {
+        "district": "Alappuzha",
+        "fatalities": 43,
+        "no_of_camps": 2126,
+        "actual_rainfall_in_mm": 608.2,
+        "normal_rainfall_in_mm": 343.1,
+        "no_of_landslides": 0,
+        "full_damaged_houses": 2075
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [76.521, 9.597]
+      },
+      "properties": {
+        "district": "Kottayam",
+        "fatalities": 14,
+        "no_of_camps": 788,
+        "actual_rainfall_in_mm": 619.2,
+        "normal_rainfall_in_mm": 386,
+        "no_of_landslides": 29,
+        "full_damaged_houses": 76
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [76.93, 9.829]
+      },
+      "properties": {
+        "district": "Idukki",
+        "fatalities": 54,
+        "no_of_camps": 363,
+        "actual_rainfall_in_mm": 1478.9,
+        "normal_rainfall_in_mm": 527.3,
+        "no_of_landslides": 143,
+        "full_damaged_houses": 1166
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [76.302, 9.974]
+      },
+      "properties": {
+        "district": "Ernakulam",
+        "fatalities": 58,
+        "no_of_camps": 1582,
+        "actual_rainfall_in_mm": 648.3,
+        "normal_rainfall_in_mm": 401.3,
+        "no_of_landslides": 0,
+        "full_damaged_houses": 615
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [76.18, 10.546]
+      },
+      "properties": {
+        "district": "Thrissur",
+        "fatalities": 72,
+        "no_of_camps": 1513,
+        "actual_rainfall_in_mm": 734.7,
+        "normal_rainfall_in_mm": 440.1,
+        "no_of_landslides": 26,
+        "full_damaged_houses": 2889
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [76.67, 10.803]
+      },
+      "properties": {
+        "district": "Palakkad",
+        "fatalities": 20,
+        "no_of_camps": 165,
+        "actual_rainfall_in_mm": 848.8,
+        "normal_rainfall_in_mm": 333.8,
+        "no_of_landslides": 20,
+        "full_damaged_houses": 1118
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [77.67, 10.903]
+      },
+      "properties": {
+        "district": "",
+        "fatalities": null,
+        "no_of_camps": null,
+        "actual_rainfall_in_mm": null,
+        "normal_rainfall_in_mm": null,
+        "no_of_landslides": null,
+        "full_damaged_houses": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.67, 9.803]
+      },
+      "properties": {
+        "district": "",
+        "fatalities": null,
+        "no_of_camps": null,
+        "actual_rainfall_in_mm": null,
+        "normal_rainfall_in_mm": null,
+        "no_of_landslides": null,
+        "full_damaged_houses": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [85.881, 20.465]
+      },
+      "properties": {
+        "district": "Cuttack",
+        "fatalities": null,
+        "no_of_camps": null,
+        "actual_rainfall_in_mm": null,
+        "normal_rainfall_in_mm": null,
+        "no_of_landslides": null,
+        "full_damaged_houses": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [86.191, 20.775]
+      },
+      "properties": {
+        "district": "Kelua river",
+        "fatalities": null,
+        "no_of_camps": null,
+        "actual_rainfall_in_mm": null,
+        "normal_rainfall_in_mm": null,
+        "no_of_landslides": null,
+        "full_damaged_houses": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [85.861, 20.215]
+      },
+      "properties": {
+        "district": "Bhubaneshwar",
+        "fatalities": null,
+        "no_of_camps": null,
+        "actual_rainfall_in_mm": null,
+        "normal_rainfall_in_mm": null,
+        "no_of_landslides": null,
+        "full_damaged_houses": null
+      }
+    },
+   
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [92.248, 26.3977]
+      },
+      "properties": {
+        "district": "Bhuragaon",
+        "fatalities": null,
+        "no_of_camps": null,
+        "actual_rainfall_in_mm": null,
+        "normal_rainfall_in_mm": null,
+        "no_of_landslides": null,
+        "full_damaged_houses": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [92.46, 26.401]
+      },
+      "properties": {
+        "district": "Mowamari",
+        "fatalities": null,
+        "no_of_camps": null,
+        "actual_rainfall_in_mm": null,
+        "normal_rainfall_in_mm": null,
+        "no_of_landslides": null,
+        "full_damaged_houses": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [91.56, 26.128]
+      },
+      "properties": {
+        "district": "Borjhar",
+        "fatalities": null,
+        "no_of_camps": null,
+        "actual_rainfall_in_mm": null,
+        "normal_rainfall_in_mm": null,
+        "no_of_landslides": null,
+        "full_damaged_houses": null
+      }
+    },
+    
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [87.468, 26.139]
+      },
+      "properties": {
+        "district": "Araria",
+        "fatalities": null,
+        "no_of_camps": null,
+        "actual_rainfall_in_mm": null,
+        "normal_rainfall_in_mm": null,
+        "no_of_landslides": null,
+        "full_damaged_houses": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [86.574, 25.905]
+      },
+      "properties": {
+        "district": "saharsa",
+        "fatalities": null,
+        "no_of_camps": null,
+        "actual_rainfall_in_mm": null,
+        "normal_rainfall_in_mm": null,
+        "no_of_landslides": null,
+        "full_damaged_houses": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [86.555, 26.135]
+      },
+      "properties": {
+        "district": "Supaul(fakirana)",
+        "fatalities": null,
+        "no_of_camps": null,
+        "actual_rainfall_in_mm": null,
+        "normal_rainfall_in_mm": null,
+        "no_of_landslides": null,
+        "full_damaged_houses": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [87.548, 25.548]
+      },
+      "properties": {
+        "district": "Katihar",
+        "fatalities": null,
+        "no_of_camps": null,
+        "actual_rainfall_in_mm": null,
+        "normal_rainfall_in_mm": null,
+        "no_of_landslides": null,
+        "full_damaged_houses": null
+      }
+    }
+  ]
+}
