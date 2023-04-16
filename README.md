@@ -1,33 +1,3 @@
-## Natrual Disaster Precautions and Visualisation
+## Title- Disaster Management and Climate Change Stopping, Monitoring, Awareness through an AI-Enabled Mobile Application and Website Platform.
 
-## Pre Requisities
-
-- Node JS
-- MongoDB
-- IDE
-
-## Run Locally
-
-Clone the project
-
-```bash
-  git clone https://github.com/upendraTRL/sihui.git
-```
-
-Go to the project directory
-
-```bash
-  cd my-project
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the app
-
-```bash
-  node app.js
-```
+![alt text](http://url/to/img.png)

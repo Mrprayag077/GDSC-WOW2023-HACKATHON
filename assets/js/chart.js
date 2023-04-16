@@ -510,7 +510,7 @@ $(function () {
 
     // setup 
     const data1 = {
-      labels: ['prayag', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      labels: [2002, 2003, 2004, 2006, 2007, 2008, 2010],
       datasets: [{
         label: '',
         data: [18, 12, 6, 9, 12, 3, 9],
@@ -651,7 +651,7 @@ $(function () {
 
     // setup 
     const dataline = {
-      labels: ['prayag', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      labels: [2002, 2003, 2004, 2006, 2007, 2008, 2010],
       datasets: [{
         label: '',
         data: [18, 12, 6, 9, 12, 3, 9],
@@ -824,7 +824,7 @@ $(function () {
 
     // setup 
     const datadonut = {
-      labels: ['prayag', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      labels: [2002, 2003, 2004, 2006, 2007, 2008, 2010],
       datasets: [{
         label: 'Year vs Destruction',
         data: [18, 12, 6, 9, 12, 3, 9],
@@ -928,7 +928,7 @@ $(function () {
 
     // setup 
     const datapiee = {
-      labels: ['prayag', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      labels: [2001, 2005, 2008, 2012, 2013, 2014, 2015],
       datasets: [{
         label: '',
         data: [18, 12, 6, 9, 12, 3, 9],
@@ -1025,7 +1025,7 @@ $(function () {
 
     // setup 
     const dataareao = {
-      labels: ['prayag', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      labels: [2002, 2003, 2004, 2006, 2008, 2014, 2015],
       datasets: [{
         label: '',
         data: [18, 12, 6, 9, 12, 3, 9],
@@ -1134,7 +1134,7 @@ $(function () {
 
     // setup 
     const datardr = {
-      labels: ['prayag', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      labels: [2002, 2006, 2008, 2014, 2015, 2016, 2019],
       datasets: [{
         label: '',
         data: [18, 12, 6, 9, 12, 3, 9],
