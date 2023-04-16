@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 style="color: white;font-size: 40px;">Communities post-various events in region</h1>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: "Quicksand", sans-serif;
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            background: #7f7fd5;
+            background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1200px;
+            margin-block: 2rem;
+            gap: 2rem;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            width: clamp(20rem, calc(20rem + 2vw), 22rem);
+            overflow: hidden;
+            box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+            border-radius: 1em;
+            background: #ECE9E6;
+            background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+
+        }
+
+
+
+        .card__body {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+        }
+
+
+        .tag {
+            align-self: flex-start;
+            padding: .25em .75em;
+            border-radius: 1em;
+            font-size: .75rem;
+        }
+
+        .tag+.tag {
+            margin-left: .5em;
+        }
+
+        .tag-blue {
+            background: #56CCF2;
+            background: linear-gradient(to bottom, #2F80ED, #56CCF2);
+            color: #fafafa;
+        }
+
+        .tag-brown {
+            background: #D1913C;
+            background: linear-gradient(to bottom, #FFD194, #D1913C);
+            color: #fafafa;
+        }
+
+        .tag-red {
+            background: #cb2d3e;
+            background: linear-gradient(to bottom, #ef473a, #cb2d3e);
+            color: #fafafa;
+        }
+
+        .card__body h4 {
+            font-size: 1.5rem;
+            text-transform: capitalize;
+        }
+
+        .card__footer {
+            display: flex;
+            padding: 1rem;
+            margin-top: auto;
+        }
+
+        .user {
+            display: flex;
+            gap: .5rem;
+        }
+
+        .user__image {
+            border-radius: 50%;
+        }
+
+        .user__info>small {
+            color: #666;
+        }
+    </style>
+    <div class="container">
+        <div class="card">
+            <div class="card__header">
+                <img src="https://th.bing.com/th/id/OIP.vvYgpqN2EGS1rtoGyDkwOQHaFj?pid=ImgDet&rs=1" alt="card__image"
+                    class="card__image" width="600">
+            </div>
+            <div class="card__body">
+                <span class="tag tag-blue">plantation</span>
+                <h4>Greenery every very</h4>
+                <p>on 28 april there is plantation drive. target to plant at least 500 new plants and give water, soil
+                    to exisiting plants. Location: kothrud pune, maharashtra. timing: 7am onwards</p>
+            </div>
+            <div class="card__footer">
+                <div class="user">
+                    <img src="https://i.pravatar.cc/40?img=1" alt="user__image" class="user__image">
+                    <div class="user__info">
+                        <h5>User1</h5>
+                        <small>10h ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card__header">
+                <img src="https://static.vecteezy.com/system/resources/previews/000/593/819/original/vector-ideas-to-reduce-pollution-say-no-to-plastic-bag-that-is-why-the-greenhouse-effect-the-campaign-to-reduce-the-use-of-plastic-bags-to-put.jpg"
+                    alt="card__image" class="card__image" width="600">
+            </div>
+            <div class="card__body">
+                <span class="tag tag-brown">Plastic</span>
+                <h4>No to plastic, Cleaning rivers</h4>
+                <p>Plastic is a dangerous substance for our earth. we need to reduce the use and try to recycle more and
+                    more.On 1 May there i drive to clean the xyz river, 8am onwards. Location: mula mutha river</p>
+            </div>
+            <div class="card__footer">
+                <div class="user">
+                    <img src="https://i.pravatar.cc/40?img=2" alt="user__image" class="user__image">
+                    <div class="user__info">
+                        <h5>Jony Doe</h5>
+                        <small>Yesterday</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card__header">
+                <img src="https://th.bing.com/th/id/OIP.jFvT7Ctcpy67Rx2v9AN8cwHaFF?pid=ImgDet&rs=1" alt="card__image"
+                    class="card__image" width="600">
+            </div>
+            <div class="card__body">
+                <span class="tag tag-red">Survey</span>
+                <h4>Take up the survey</h4>
+                <p>to increase the correctness of data surveys are necessary, so there is a drive for basic locality
+                    survey for kothrud region on 3 May, 10 am on wards. It will help Government to understand localiy
+                    and its patterns.</p>
+            </div>
+            <div class="card__footer">
+                <div class="user">
+                    <img src="https://i.pravatar.cc/40?img=3" alt="user__image" class="user__image">
+                    <div class="user__info">
+                        <h5>John Doe</h5>
+                        <small>2d ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1 style="color: white;font-size: 25px;">more coming....</h1>
+
+</body>
+
+</html>

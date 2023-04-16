@@ -13,6 +13,40 @@
                 "Following building codes and regulations: Follow local building codes and regulations for earthquake-prone areas when constructing new structures. These codes are designed to ensure buildings are built to withstand seismic activity.",
                 "Securing hazards: Identify and secure potential hazards in and around your home, such as heavy objects on high shelves, unsecured water heaters, or loose bricks or masonry, to prevent them from becoming hazards during an earthquake.",
                 "Being informed: Stay informed about earthquake risks and preparedness measures in your area. Follow updates and recommendations from local emergency management agencies, and be aware of evacuation routes and designated safe areas."
+            ],
+            "precaution": [
+                "   Stay informed: Stay updated on weather forecasts and flood warnings from local authorities, and be aware of evacuation routes and designated safe areas.",
+                "   Elevate your home: If possible, elevate your home above the flood level. You can also install flood vents to allow water to flow through the foundation, which can prevent structural damage.",
+                "    Install a sump pump: Install a sump pump in your basement or crawlspace to help prevent flooding from groundwater.",
+                "    Keep gutters and drains clean: Regularly clean gutters, downspouts, and other drainage systems to ensure that water flows freely and does not back up and cause flooding.",
+                "    Store important documents: Keep important documents, such as insurance policies, in a secure and waterproof location.",
+                "   Consider flood insurance: Purchase flood insurance to protect your home and belongings from flood damage.",
+                "   Have an emergency kit: Prepare an emergency kit that includes essentials such as food, water, first aid supplies, and a battery-powered radio. Keep it in a readily accessible place."
+            ]
+        },
+        {
+            "state": "Maharashtra",
+            "region": "Mumbai City",
+            "calamity": "Flood",
+            "structure": "Water proof concrete foundation",
+            "precaution": [
+                "Creating an earthquake emergency kit: Prepare a kit that includes essentials such as food, water, first aid supplies, flashlights, and a battery-powered radio. Keep it in a readily accessible place.",
+                "Securing heavy furniture and objects: Anchor or secure heavy furniture, appliances, and objects to prevent them from falling during an earthquake. Use brackets, straps, or other securing devices to secure them to the walls or floor.",
+                "Identifying safe spots in your home: Identify safe spots in your home, such as under sturdy furniture like a table or desk, away from windows, and practice 'Drop, Cover, and Hold On' drills regularly. This can help protect you from falling debris during an earthquake.",
+                "Reinforcing your home's structure: Consider retrofitting your home to meet earthquake-resistant standards, such as using earthquake-resistant materials and designs. Consult with a professional engineer or contractor for guidance.",
+                "Following building codes and regulations: Follow local building codes and regulations for earthquake-prone areas when constructing new structures. These codes are designed to ensure buildings are built to withstand seismic activity.",
+                "Securing hazards: Identify and secure potential hazards in and around your home, such as heavy objects on high shelves, unsecured water heaters, or loose bricks or masonry, to prevent them from becoming hazards during an earthquake.",
+                "Being informed: Stay informed about earthquake risks and preparedness measures in your area. Follow updates and recommendations from local emergency management agencies, and be aware of evacuation routes and designated safe areas."
+            ],
+            "prevention": [
+                "Stay informed of weather updates and flood warnings through reliable sources such as the National Weather Service or local emergency management agencies. ",
+                "Prepare an emergency kit with non-perishable food, clean water, first aid supplies, important documents, and a waterproof container for valuables.",
+                "Develop an evacuation plan, identify evacuation routes, and know the location of emergency shelters to stay connected with family members.",
+                "Protect your property by moving valuables and important documents to higher ground or elevated areas, installing sandbags or barriers, and purchasing flood insurance.",
+                " Locate and shut off gas, electricity, and water mains if flooding is imminent to minimize potential damage and hazards.",
+                " Never attempt to walk or drive through floodwaters, as it can be deceptively deep and fast-moving.",
+                " Do not enter a flooded area or return to your home until authorities declare it safe to do so and be mindful of hazards such as debris, contaminated water, and damaged infrastructure.",
+                "  Consider having a backup power source, such as a generator, and follow proper safety precautions when using generators."
             ]
         },
         {

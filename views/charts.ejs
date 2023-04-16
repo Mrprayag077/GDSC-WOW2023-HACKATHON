@@ -27,7 +27,7 @@
     <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
         <a class="navbar-brand brand-logo" href="../../index.html">
-          LegendBytes</a>
+          Webscalers</a>
         <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/logo-mini.svg"
             alt="logo" /></a>
       </div>
@@ -35,15 +35,15 @@
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="mdi mdi-menu"></span>
         </button>
-        
+
         <ul class="navbar-nav navbar-nav-right">
-          
+
           <li class="nav-item d-none d-lg-block full-screen-link">
             <a class="nav-link">
               <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
             </a>
           </li>
-          
+
           <li class="nav-item dropdown">
             <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
               data-bs-toggle="dropdown">
@@ -94,7 +94,7 @@
             </div>
           </li>
 
-          
+
           <li class="nav-item nav-logout d-none d-lg-block">
             <a class="nav-link" href="#">
               <i class="mdi mdi-power"></i>
@@ -111,7 +111,7 @@
     <div class="container-fluid page-body-wrapper">
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-          
+
           <li class="nav-item">
 
 
@@ -138,7 +138,7 @@
 
           </li>
 
-         
+
           <li class="nav-item">
             <a class="nav-link" href="http://192.168.200.250:8502">
               <span class="menu-title">Flood Visualization</span>
@@ -159,7 +159,7 @@
               <i class="mdi mdi-format-list-bulleted menu-icon"></i>
             </a>
           </li>
-          
+
         </ul>
       </nav>
       <!-- partial -->
@@ -270,46 +270,46 @@
 
 
 
-                      <script>
-                        document.getElementById('txtInput').value = "this is a bar chart. here we can see on y-axes total distraction and on x-axes total years data in the region. highest bar is of 2012 year with value 2000 points scale and least 2022 of 800 points scale";
-                        var txtInput = document.querySelector('#txtInput');
-                        var voiceList = document.querySelector('#voiceList');
-                        var btnSpeak = document.querySelector('#btnSpeak');
-                        var synth = window.speechSynthesis;
-                        var voices = [];
+                  <script>
+                    document.getElementById('txtInput').value = "this is a bar chart. here we can see on y-axes total distraction and on x-axes total years data in the region. highest bar is of 2012 year with value 2000 points scale and least 2022 of 800 points scale";
+                    var txtInput = document.querySelector('#txtInput');
+                    var voiceList = document.querySelector('#voiceList');
+                    var btnSpeak = document.querySelector('#btnSpeak');
+                    var synth = window.speechSynthesis;
+                    var voices = [];
 
-                        PopulateVoices();
-                        if (speechSynthesis !== undefined) {
-                          speechSynthesis.onvoiceschanged = PopulateVoices;
+                    PopulateVoices();
+                    if (speechSynthesis !== undefined) {
+                      speechSynthesis.onvoiceschanged = PopulateVoices;
+                    }
+
+                    btnSpeak.addEventListener('click', () => {
+                      var toSpeak = new SpeechSynthesisUtterance(txtInput.value);
+                      var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
+                      voices.forEach((voice) => {
+                        if (voice.name === selectedVoiceName) {
+                          toSpeak.voice = voice;
+                          console.log(selectedVoiceName);
                         }
+                      });
+                      synth.speak(toSpeak);
+                    });
 
-                        btnSpeak.addEventListener('click', () => {
-                          var toSpeak = new SpeechSynthesisUtterance(txtInput.value);
-                          var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
-                          voices.forEach((voice) => {
-                            if (voice.name === selectedVoiceName) {
-                              toSpeak.voice = voice;
-                              console.log(selectedVoiceName);
-                            }
-                          });
-                          synth.speak(toSpeak);
-                        });
+                    function PopulateVoices() {
+                      voices = synth.getVoices();
+                      var selectedIndex = voiceList.selectedIndex < 0 ? 0 : voiceList.selectedIndex;
+                      voiceList.innerHTML = '';
+                      voices.forEach((voice) => {
+                        var listItem = document.createElement('option');
+                        listItem.textContent = voice.name;
+                        listItem.setAttribute('data-lang', voice.lang);
+                        listItem.setAttribute('data-name', voice.name);
+                        voiceList.appendChild(listItem);
+                      });
 
-                        function PopulateVoices() {
-                          voices = synth.getVoices();
-                          var selectedIndex = voiceList.selectedIndex < 0 ? 0 : voiceList.selectedIndex;
-                          voiceList.innerHTML = '';
-                          voices.forEach((voice) => {
-                            var listItem = document.createElement('option');
-                            listItem.textContent = voice.name;
-                            listItem.setAttribute('data-lang', voice.lang);
-                            listItem.setAttribute('data-name', voice.name);
-                            voiceList.appendChild(listItem);
-                          });
-
-                          voiceList.selectedIndex = selectedIndex;
-                        }
-                      </script> -->
+                      voiceList.selectedIndex = selectedIndex;
+                    }
+                  </script> -->
 
 
                 </div>
@@ -347,9 +347,9 @@
         <!-- partial:../../partials/_footer.html -->
         <footer class="footer">
           <div class="container-fluid d-flex justify-content-between">
-            <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">LegendBytes</span>
-           
-             
+            <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Webscalers</span>
+
+
           </div>
         </footer>
         <!-- partial -->
