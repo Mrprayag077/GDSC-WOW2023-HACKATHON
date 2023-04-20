@@ -59,6 +59,25 @@ app.get("/", function (req, res) {
 });
 
 
+app.get("/surveyform", function (req, res) {
+    // res.send("hello world")
+    res.render('formcoum');
+});
+
+
+
+
+app.get("/safezones", function (req, res) {
+    // res.send("hello world")
+    res.render('safezone');
+});
+
+
+app.get("/coummunity", function (req, res) {
+    // res.send("hello world")
+    res.render('coummunity');
+});
+
 app.get("/data.inputs", function (req, res) {
     // res.send("hello world")
     res.render("form1");

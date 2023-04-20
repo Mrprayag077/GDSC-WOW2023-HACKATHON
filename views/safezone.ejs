@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <title>Maps Project</title>
+
+    <style>
+        #map {
+            height: 800px;
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="map"></div>
+
+    <a href="comunnity.html">jj</a>
+    <a href="survey-form.html">jj</a>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        const apiKey = 'pk.eyJ1IjoiYWxmcmVkMjAxNiIsImEiOiJja2RoMHkyd2wwdnZjMnJ0MTJwbnVmeng5In0.E4QbAFjiWLY8k3AFhDtErA';
+
+        const mymap = L.map('map').setView([18.504055388697367, 73.80745747188948], 13);
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            maxZoom: 18,
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: apiKey
+        }).addTo(mymap);
+
+        // Adding Marker
+
+        const marker = L.marker([18.504055388697367, 73.80745747188948]).addTo(mymap);
+
+        // Add popup message
+        let template = `
+
+<h3>Government offcies</h3>
+<h3>Phone number: 9078674536</h3>
+<h3>officer name: xyz</h3>
+
+`
+        marker.bindPopup(template);
+
+
+
+        const marker1 = L.marker([18.509083307749208, 73.81921304312709]).addTo(mymap);
+
+        // Add popup message
+        let template1 = `
+
+<h3>Hospitals</h3>
+<h3>Phone number: 9089765434</h3>
+<h3>Doctor: xyz</h3>
+
+`
+        marker1.bindPopup(template1);
+
+
+
+
+        const marker2 = L.marker([18.510132352468702, 73.7688936948145
+        ]).addTo(mymap);
+
+        // Add popup message
+        let template2 = `
+
+<h3>Hospitals</h3>
+<h3>Phone number: 9089765434</h3>
+<h3>Doctor: xyz</h3>
+
+`
+        marker2.bindPopup(template2);
+
+
+
+        const marker3 = L.marker([18.49332945268911, 73.74829864575057
+
+
+        ]).addTo(mymap);
+
+        // Add popup message
+        let template3 = `
+
+<h3>Hospitals</h3>
+<h3>Phone number: 9089765434</h3>
+<h3>Doctor: xyz</h3>
+
+`
+        marker3.bindPopup(template3);
+
+
+
+
+        const marker4 = L.marker([18.55713208390071, 73.82644820608257
+
+
+        ]).addTo(mymap);
+
+        // Add popup message
+        let template4 = `
+
+<h3>Hospitals</h3>
+<h3>Phone number: 9089765434</h3>
+<h3>Doctor: xyz</h3>
+
+`
+        marker4.bindPopup(template4);
+
+        // Add circle 
+
+        const circle = L.circle([18.504055388697367, 73.80745747188948], {
+            radius: 700,
+            color: '#006400',
+            fillColor: '#32cd32',
+            fillOpacity: 0.2
+        }).addTo(mymap).bindPopup('<ul>   <li>Name: Safe Zone Delta</li><li>Description: This safe zone is located in a former school and has classrooms available for sleeping and activities. Meals are provided twice a day.</li       <li>Contact: info@safezonedelta.org</li>  <li>Hours of operation: 8am-8pm</li>   <li>Address: 321 Elm St, Anytown, USA</li>  <li>Directions: Take the bus route 456 and get off at the Elm St stop. The safe zone is located one block east.</li> <li>Any restrictions: Open to all ages, but limited to individuals who are able to climb stairs.</li>   <li>Rules and regulations: No smoking or alcohol allowed. Respect the property and belongings of others.</li>  <li>Safety tips: Keep emergency supplies, such as a flashlight and first aid kit, readily available. Be mindful of exits and evacuation routes.</li>  <li>Any additional resources: Educational resources and activities are available for children.</li  </ul   ')
+
+
+
+
+
+        const circle1 = L.circle([18.55436104195708, 73.75045032634333
+        ], {
+            radius: 650,
+            color: '#006400',
+            fillColor: '#32cd32',
+            fillOpacity: 0.2
+        }).addTo(mymap).bindPopup(' <div style="text-align:left;">    <ul> <li>Name: Safe Zone Charlie</li> <li>Description: This safe zone is located in a large stadium and has designated sleeping areas on the field. Portable toilets and showers are available.</li> <li>Contact: (555) 123-4567</li><li>Hours of operation: 24/7</li> <li>Address: 789 Maple Ave, Anytown, USA</li> <li>Directions: Take the highway exit 10 and follow the signs for the stadium. Parking is available in the lot adjacent to the safe zone.</li> <li>Any restrictions: Open to all ages and genders.</l  <li>Rules and regulations: No pets allowed. Keep noise levels low during designated quiet hours.</li  <li>Safety tips: Stay hydrated and rest as needed. Be aware of your surroundings and report any concerns to the staff.</li> <li>Any additional resources: Medical personnel and mental health counselors are available on site.</li</ul ></div> ')
+
+
+        const circle2 = L.circle([18.466638164979486, 73.75533241590381
+
+        ], {
+            radius: 600,
+            color: '#006400',
+            fillColor: '#32cd32',
+            fillOpacity: 0.2
+        }).addTo(mymap).bindPopup(' <ul>  <li>Name: Safe Zone Bravo</li> <li>Description: This safe zone is located in a large community center and has multiple rooms available for sleeping and resting. Meals are provided three times a day.</li> <li>Contact: info@safezonebravo.com</li> <li>Hours of operation: 9am-5pm</li> <li>Address: 456 Oak St, Anytown, USA</li>  <li>Directions: Take the bus route 123 and get off at the Oak St stop. Walk two blocks east and the safe zone will be on your left.</li> <li>Any restrictions: Open to all ages, but limited to female-identifying individuals only.</li> <li>Rules and regulations: No weapons or drugs allowed. Respect the privacy and safety of others.</li>  <li>Safety tips: Keep your personal belongings close and secure. Report any suspicious activity to the staff immediately.</li> <li>Any additional resources: Counseling services and legal aid are available on site.</li></ul>          ')
+
+
+
+        const circle3 = L.circle([18.458143364850073, 73.84696154127289
+
+        ], {
+            radius: 550,
+            color: '#006400',
+            fillColor: '#32cd32',
+            fillOpacity: 0.2
+        }).addTo(mymap).bindPopup("<ul><li>Name: Safe Zone Alpha</li> <li>Description: This safe zone is equipped with emergency supplies, including food and water, and has a medical tent staffed by trained personnel.</li> <li>Contact: (123) 456-7890</li>    <li>Hours of operation: 24/7</li>   <li>Address: 123 Main St, Anytown, USA</li>   <li>Directions: Take exit 5 off the highway and turn left on Main St. The safe zone is located on the right.</li>   <li>Any restrictions: Open to all ages and genders.</li>     <li>Rules and regulations: No smoking or open flames allowed. Follow the instructions of the staff and volunteers.</li>            <li>Safety tips: Stay calm and follow the emergency protocols. Seek assistance from the staff if needed.</li>     <li>Any additional resources: First aid supplies, blankets, and hygiene products are available.</li></ul>")
+
+
+
+        // Add Polygon
+
+     //   const polygon = L.polygon([
+
+    //        [40.73618, -73.97545],
+    //        [40.731497, -73.974342],
+    //        [40.729324, -73.972234],
+    //        [40.732368, -73.981293],
+    //    ], {
+    //        color: 'blue',
+    //        fillColor: 'blue',
+    //        fillOpacity: 0.2
+    //    }).addTo(mymap).bindPopup(' I am a polygon')
+
+// polygon.bindPopup(' I am a polygon')
+
+
+    </script>
+</body>
+
+</html>
